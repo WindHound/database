@@ -4,6 +4,7 @@ public class StageRelation {
     private String relation;
 
     public StageRelation(int stageRelationID, int stageID, int relative, String relation) {
+
         StageRelationID = stageRelationID;
         StageID = stageID;
         this.relative = relative;

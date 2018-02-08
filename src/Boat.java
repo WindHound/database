@@ -9,6 +9,7 @@ public class Boat {
     public Boat(int boatID, float gph, float offshoreToD, float offshoreToT, float offshoreTnoL, float offshoreTnoM,
                 float offshoreTnoH, float inshoreToD, float inshoreToT, float inshoreTnoL, float inshoreTnoM,
                 float inshoreTnoH, String skipper, String boatClass, String type) {
+
         this.boatID = boatID;
         this.gph = gph;
         this.offshoreToD = offshoreToD;
@@ -31,6 +32,7 @@ public class Boat {
                 float offshoreToD, float offshoreToT, float offshoreTnoL, float offshoreTnoM, float offshoreTnoH,
                 float inshoreToD, float inshoreToT, float inshoreTnoL, float inshoreTnoM, float inshoreTnoH,
                 String name, String skipper, String boatClass, String type) {
+
         this.boatID = boatID;
         this.sailNo = sailNo;
         this.displacement = displacement;

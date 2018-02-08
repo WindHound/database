@@ -5,6 +5,7 @@ public class Location {
 
     public Location(int locationID, int raceID, int userID, float longitude, float latitude, float accelerometer,
                     float gyro, float compass) {
+
         this.locationID = locationID;
         this.raceID = raceID;
         this.userID = userID;

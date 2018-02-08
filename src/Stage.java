@@ -4,6 +4,7 @@ public class Stage {
     private String name, startTime, endTime, admin, type;
 
     public Stage(int stageID, String name, String startTime, String endTime, String admin, String type) {
+
         this.stageID = stageID;
         this.name = name;
         this.startTime = startTime;
