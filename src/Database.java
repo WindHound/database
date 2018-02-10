@@ -66,8 +66,7 @@ public class Database {
         return rs;
     }
 
-
-
+    //LOCATION
     public ArrayList<Location> getLocationSet(String boatID, String raceID) throws SQLException {
         ArrayList<Location> locationSet = new ArrayList<>();
         Location temp = null;
@@ -101,6 +100,7 @@ public class Database {
     }
 
 
+    //BOAT
     public void addBoat(Boat b) {
 
         String variables = "NAME, SKIPPER, SAILNO, LENGTH, BEAM, DISPLACEMENT, DRAFT, CLASS, TYPE, GPH, OFFSHORE_TOD, " +
@@ -143,6 +143,10 @@ public class Database {
     public void deleteBoat(int boatID) {
         ResultSet rs = query("delete from boat where boat_id=" + boatID);
     }
+
+
+    //USER
+
 }
 
 
