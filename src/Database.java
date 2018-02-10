@@ -66,6 +66,8 @@ public class Database {
         return rs;
     }
 
+
+
     public ArrayList<Location> getLocationSet(String boatID, String raceID) throws SQLException {
         ArrayList<Location> locationSet = new ArrayList<>();
         Location temp = null;
@@ -89,15 +91,15 @@ public class Database {
         return locationSet;
     }
 
+    public void addLocation(Location l) {
 
-
-    public void addLocation(int stageID, int boatID, double longitude,
-                            double latitude, double acc, double gyro, double compass) {
         String variables = "stage_id, boat_id, longitude, latitude, acc, gyro, compass";
-        String values    = stageID +","+ boatID +","+ longitude +","+ latitude +","+ acc +","+ gyro +","+ compass;
+        String values    = l.getRaceID() +","+ l.getUserID() +","+ l.getLongitude() +","+ l.getLatitude() +","+
+                l.getAccelerometer() +","+ l.getGyro() +","+ l.getCompass();
 
         ResultSet rs = query("insert into location ("+ variables +") values ("+ values +")");
     }
+
 
 }
 

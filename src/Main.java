@@ -19,8 +19,6 @@ class Main {
             System.out.println(l.getLocationID() + " " + l.getLongitude());
         }
 
-//        db.addLocation(1, 1, 2.3, 2.3, 0.1, 0.2, 0.3);
-
     }
 
 }
