@@ -5,12 +5,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
 
-/**
- *
- * Currently connects to our DB
- * Returns the contents of the HELP table (provided by default)
- *
- */
 class Main {
 
     public static void main(String args[]) throws SQLException {
@@ -20,7 +14,13 @@ class Main {
         //ResultSet rs = db.query("select * from HELP");
 
         ArrayList<Location> loc = db.getLocationSet("1", "1");
-        System.out.println(loc.get(0).getAccelerometer());
+
+        for (Location l : loc) {
+            System.out.println(l.getLocationID() + " " + l.getLongitude());
+        }
+
+//        db.addLocation(1, 1, 2.3, 2.3, 0.1, 0.2, 0.3);
+
     }
 
 }

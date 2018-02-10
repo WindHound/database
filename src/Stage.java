@@ -3,7 +3,7 @@ public class Stage {
     private int stageID;
     private String name, startTime, endTime, admin, type;
 
-    public Stage(int stageID, String name, String startTime, String endTime, String admin, String type) {
+    public Stage(String name, String startTime, String endTime, String admin, String type, int stageID) {
 
         this.stageID = stageID;
         this.name = name;

@@ -9,7 +9,7 @@ import static com.sun.org.apache.xerces.internal.utils.SecuritySupport.getResour
 
 public class Database {
 
-    String hostname, sid, user, password, port;
+    private String hostname, sid, user, password, port;
 
     /**
      * Initialise from variables
@@ -61,20 +61,6 @@ public class Database {
             Statement stmt = con.createStatement();
             rs = stmt.executeQuery(query);
 
-//            ResultSetMetaData meta = rs.getMetaData();
-//            int cols = meta.getColumnCount();
-//
-//            while(rs.next()) {
-//
-//                for(int i=0; i<cols; i++) {
-//                    Object temp = rs.getObject(i+1);
-//                    System.out.print(temp + " ");
-//                }
-//                System.out.println(" ");
-//            }
-//
-//            con.close();
-
         }catch(Exception e){ System.out.println(e);}
 
         return rs;
@@ -83,13 +69,16 @@ public class Database {
     public ArrayList<Location> getLocationSet(String boatID, String raceID) throws SQLException {
         ArrayList<Location> locationSet = new ArrayList<>();
         Location temp = null;
-        ResultSet rs = query("select * from LOCATION where BOAT_ID=" + boatID + " AND STAGE_ID=" + raceID);
+
+        String str = "select * from LOCATION where BOAT_ID=" + boatID + " AND STAGE_ID=" + raceID + " ORDER BY LOCATION_ID DESC";
+        ResultSet rs = query(str);
+
 
         while(rs.next()) {
             try {
-                temp = new Location(rs.getInt(1), rs.getInt(2), rs.getInt(3),
+                temp = new Location(rs.getInt(1), rs.getInt(2), rs.getFloat(3),
                         rs.getFloat(4), rs.getFloat(5), rs.getFloat(6),
-                        rs.getFloat(7), rs.getFloat(8));
+                        rs.getFloat(7), rs.getInt(8));
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -99,4 +88,17 @@ public class Database {
 
         return locationSet;
     }
+
+
+
+    public void addLocation(int stageID, int boatID, double longitude,
+                            double latitude, double acc, double gyro, double compass) {
+        String variables = "stage_id, boat_id, longitude, latitude, acc, gyro, compass";
+        String values    = stageID +","+ boatID +","+ longitude +","+ latitude +","+ acc +","+ gyro +","+ compass;
+
+        ResultSet rs = query("insert into location ("+ variables +") values ("+ values +")");
+    }
+
 }
+
+

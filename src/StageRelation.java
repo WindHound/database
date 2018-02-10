@@ -3,7 +3,7 @@ public class StageRelation {
     private int StageRelationID, StageID, relative;
     private String relation;
 
-    public StageRelation(int stageRelationID, int stageID, int relative, String relation) {
+    public StageRelation(int stageID, int relative, String relation, int stageRelationID) {
 
         StageRelationID = stageRelationID;
         StageID = stageID;

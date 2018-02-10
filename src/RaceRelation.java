@@ -2,7 +2,7 @@ public class RaceRelation {
 
     private int RaceRelationID, RaceID, BoatID, UserID;
 
-    public RaceRelation(int raceRelationID, int raceID, int boatID, int userID) {
+    public RaceRelation(int raceID, int boatID, int userID, int raceRelationID) {
 
         RaceRelationID = raceRelationID;
         RaceID = raceID;

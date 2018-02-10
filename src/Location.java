@@ -3,8 +3,8 @@ public class Location {
     private int locationID, raceID, userID;
     private float longitude, latitude, accelerometer, gyro, compass;
 
-    public Location(int locationID, int raceID, int userID, float longitude, float latitude, float accelerometer,
-                    float gyro, float compass) {
+    public Location(int raceID, int userID, float longitude, float latitude, float accelerometer,
+                    float gyro, float compass, int locationID) {
 
         this.locationID = locationID;
         this.raceID = raceID;

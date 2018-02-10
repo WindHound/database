@@ -6,9 +6,9 @@ public class Boat {
     private String name, skipper, boatClass, type;
 
     //Mandatory fields only
-    public Boat(int boatID, float gph, float offshoreToD, float offshoreToT, float offshoreTnoL, float offshoreTnoM,
+    public Boat(float gph, float offshoreToD, float offshoreToT, float offshoreTnoL, float offshoreTnoM,
                 float offshoreTnoH, float inshoreToD, float inshoreToT, float inshoreTnoL, float inshoreTnoM,
-                float inshoreTnoH, String skipper, String boatClass, String type) {
+                float inshoreTnoH, String skipper, String boatClass, String type, int boatID) {
 
         this.boatID = boatID;
         this.gph = gph;
