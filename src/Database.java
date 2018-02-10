@@ -182,6 +182,12 @@ public class Database {
     public void deleteUser(int userID) {
         query("delete from boat where user_id=" + userID);
     }
+
+
+    //REL_BOAT_USER
+    public void addBoatUserRelation(RelBoatUser r) {
+
+    }
 }
 
 
