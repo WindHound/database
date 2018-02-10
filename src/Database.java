@@ -101,6 +101,48 @@ public class Database {
     }
 
 
+    public void addBoat(Boat b) {
+
+        String variables = "NAME, SKIPPER, SAILNO, LENGTH, BEAM, DISPLACEMENT, DRAFT, CLASS, TYPE, GPH, OFFSHORE_TOD, " +
+                "OFFSHORE_TOT, OFFSHORE_TRIPLE_L, OFFSHORE_TRIPLE_M, OFFSHORE_TRIPLE_H, INSHORE_TOD, INSHORE_TOT, " +
+                "INSHORE_TRIPLE_L, INSHORE_TRIPLE_M, INSHORE_TRIPLE_H";
+
+        String values = "'" + b.getName() +"','"+ b.getSkipper() +"','"+ b.getSailNo() +"','"+ b.getLength() +"','"+ b.getBeam() +"','"+
+                b.getDisplacement() +"','"+ b.getDraft() +"','"+ b.getBoatClass() +"','"+ b.getType() +"','"+ b.getGph() +"','"+
+                b.getOffshoreToD() +"','"+ b.getOffshoreToT() +"','"+ b.getOffshoreTnoL() +"','"+ b.getOffshoreTnoM() +"','"+
+                b.getOffshoreTnoH() +"','"+ b.getInshoreToD() +"','"+ b.getInshoreToT() +"','"+ b.getOffshoreTnoL() +"','"+
+                b.getInshoreTnoM() +"','"+ b.getInshoreTnoH() + "'";
+
+        String query = "insert into boat ("+variables+") values ("+values+")";
+        System.out.println(query);
+
+        query(query);
+    }
+
+    public Boat getBoat(int boatID) {
+        ResultSet rs = query("select * from boat where boat_id=" + boatID);
+        Boat b = null;
+
+        try {
+            rs.next();
+            b = new Boat(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4),
+                    rs.getDouble(5), rs.getDouble(6), rs.getDouble(7), rs.getString(8),
+                    rs.getString(9), rs.getDouble(10), rs.getDouble(11),
+                    rs.getDouble(12), rs.getDouble(13), rs.getDouble(14),
+                    rs.getDouble(15), rs.getDouble(16), rs.getDouble(17), rs.getDouble(18),
+                    rs.getDouble(19), rs.getDouble(20));
+
+            b.setBoatID(rs.getInt(21));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return b;
+    }
+
+    public void deleteBoat(int boatID) {
+        ResultSet rs = query("delete from boat where boat_id=" + boatID);
+    }
 }
 
 

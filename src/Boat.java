@@ -1,16 +1,21 @@
 public class Boat {
 
     private int boatID, sailNo, displacement;
-    private float length, beam, draft, gph, offshoreToD, offshoreToT, offshoreTnoL, offshoreTnoM, offshoreTnoH, inshoreToD,
+    private double length, beam, draft, gph, offshoreToD, offshoreToT, offshoreTnoL, offshoreTnoM, offshoreTnoH, inshoreToD,
             inshoreToT, inshoreTnoL, inshoreTnoM, inshoreTnoH;
     private String name, skipper, boatClass, type;
 
-    //Mandatory fields only
-    public Boat(float gph, float offshoreToD, float offshoreToT, float offshoreTnoL, float offshoreTnoM,
-                float offshoreTnoH, float inshoreToD, float inshoreToT, float inshoreTnoL, float inshoreTnoM,
-                float inshoreTnoH, String skipper, String boatClass, String type, int boatID) {
+    //Minimal - for testing
+    public Boat(int sailNo, String name) {
+        this.sailNo = sailNo;
+        this.name = name;
+    }
 
-        this.boatID = boatID;
+    //Mandatory fields only
+    public Boat(double gph, double offshoreToD, double offshoreToT, double offshoreTnoL, double offshoreTnoM,
+                double offshoreTnoH, double inshoreToD, double inshoreToT, double inshoreTnoL, double inshoreTnoM,
+                double inshoreTnoH, String skipper, String boatClass, String type) {
+
         this.gph = gph;
         this.offshoreToD = offshoreToD;
         this.offshoreToT = offshoreToT;
@@ -28,12 +33,10 @@ public class Boat {
     }
 
     //All parameters
-    public Boat(int boatID, int sailNo, int displacement, float length, float beam, float draft, float gph,
-                float offshoreToD, float offshoreToT, float offshoreTnoL, float offshoreTnoM, float offshoreTnoH,
-                float inshoreToD, float inshoreToT, float inshoreTnoL, float inshoreTnoM, float inshoreTnoH,
-                String name, String skipper, String boatClass, String type) {
+    public Boat(String name, String skipper, int sailNo, int displacement, double length, double beam, double draft, String boatClass, String type,
+                double gph, double offshoreToD, double offshoreToT, double offshoreTnoL, double offshoreTnoM, double offshoreTnoH,
+                double inshoreToD, double inshoreToT, double inshoreTnoL, double inshoreTnoM, double inshoreTnoH) {
 
-        this.boatID = boatID;
         this.sailNo = sailNo;
         this.displacement = displacement;
         this.length = length;
@@ -70,59 +73,59 @@ public class Boat {
         return displacement;
     }
 
-    public float getLength() {
+    public double getLength() {
         return length;
     }
 
-    public float getBeam() {
+    public double getBeam() {
         return beam;
     }
 
-    public float getDraft() {
+    public double getDraft() {
         return draft;
     }
 
-    public float getGph() {
+    public double getGph() {
         return gph;
     }
 
-    public float getOffshoreToD() {
+    public double getOffshoreToD() {
         return offshoreToD;
     }
 
-    public float getOffshoreToT() {
+    public double getOffshoreToT() {
         return offshoreToT;
     }
 
-    public float getOffshoreTnoL() {
+    public double getOffshoreTnoL() {
         return offshoreTnoL;
     }
 
-    public float getOffshoreTnoM() {
+    public double getOffshoreTnoM() {
         return offshoreTnoM;
     }
 
-    public float getOffshoreTnoH() {
+    public double getOffshoreTnoH() {
         return offshoreTnoH;
     }
 
-    public float getInshoreToD() {
+    public double getInshoreToD() {
         return inshoreToD;
     }
 
-    public float getInshoreToT() {
+    public double getInshoreToT() {
         return inshoreToT;
     }
 
-    public float getInshoreTnoL() {
+    public double getInshoreTnoL() {
         return inshoreTnoL;
     }
 
-    public float getInshoreTnoM() {
+    public double getInshoreTnoM() {
         return inshoreTnoM;
     }
 
-    public float getInshoreTnoH() {
+    public double getInshoreTnoH() {
         return inshoreTnoH;
     }
 
@@ -156,59 +159,59 @@ public class Boat {
         this.displacement = displacement;
     }
 
-    public void setLength(float length) {
+    public void setLength(double length) {
         this.length = length;
     }
 
-    public void setBeam(float beam) {
+    public void setBeam(double beam) {
         this.beam = beam;
     }
 
-    public void setDraft(float draft) {
+    public void setDraft(double draft) {
         this.draft = draft;
     }
 
-    public void setGph(float gph) {
+    public void setGph(double gph) {
         this.gph = gph;
     }
 
-    public void setOffshoreToD(float offshoreToD) {
+    public void setOffshoreToD(double offshoreToD) {
         this.offshoreToD = offshoreToD;
     }
 
-    public void setOffshoreToT(float offshoreToT) {
+    public void setOffshoreToT(double offshoreToT) {
         this.offshoreToT = offshoreToT;
     }
 
-    public void setOffshoreTnoL(float offshoreTnoL) {
+    public void setOffshoreTnoL(double offshoreTnoL) {
         this.offshoreTnoL = offshoreTnoL;
     }
 
-    public void setOffshoreTnoM(float offshoreTnoM) {
+    public void setOffshoreTnoM(double offshoreTnoM) {
         this.offshoreTnoM = offshoreTnoM;
     }
 
-    public void setOffshoreTnoH(float offshoreTnoH) {
+    public void setOffshoreTnoH(double offshoreTnoH) {
         this.offshoreTnoH = offshoreTnoH;
     }
 
-    public void setInshoreToD(float inshoreToD) {
+    public void setInshoreToD(double inshoreToD) {
         this.inshoreToD = inshoreToD;
     }
 
-    public void setInshoreToT(float inshoreToT) {
+    public void setInshoreToT(double inshoreToT) {
         this.inshoreToT = inshoreToT;
     }
 
-    public void setInshoreTnoL(float inshoreTnoL) {
+    public void setInshoreTnoL(double inshoreTnoL) {
         this.inshoreTnoL = inshoreTnoL;
     }
 
-    public void setInshoreTnoM(float inshoreTnoM) {
+    public void setInshoreTnoM(double inshoreTnoM) {
         this.inshoreTnoM = inshoreTnoM;
     }
 
-    public void setInshoreTnoH(float inshoreTnoH) {
+    public void setInshoreTnoH(double inshoreTnoH) {
         this.inshoreTnoH = inshoreTnoH;
     }
 
