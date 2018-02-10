@@ -146,7 +146,42 @@ public class Database {
 
 
     //USER
+    public void addUser(User u) {
+        String variables = "name, username, password, email, telno";
+        String values = "'" + u.getName() +"','"+ u.getUsername() +"','"+ u.getPassword() +"','"+ u.getEmail()
+                +"','"+ u.getTelNo();
 
+        query("insert into user ("+variables+") values ("+values+")");
+    }
+
+    private User getUser(String query) {
+        ResultSet rs = query("select * from user where " + query);
+
+        User u = null;
+
+        try {
+            rs.next();
+
+            u = new User(rs.getInt(1), rs.getString(2), rs.getString(3),
+                    rs.getString(4), rs.getString(5), rs.getInt(6));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return u;
+    }
+
+    public User getUserByUsername(String username) {
+        return getUser("username=" + username);
+    }
+
+    public User getUserByID(int userID) {
+        return getUser("user_id=" + userID);
+    }
+
+    public void deleteUser(int userID) {
+        query("delete from boat where user_id=" + userID);
+    }
 }
 
 

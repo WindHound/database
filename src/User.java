@@ -5,7 +5,7 @@ public class User {
 
     //TODO password encryption?
 
-    public User(int userID, int telNo, String name, String username, String password, String email) {
+    public User(int userID, String name, String username, String password, String email, int telNo) {
         this.userID = userID;
         this.telNo = telNo;
         this.name = name;
